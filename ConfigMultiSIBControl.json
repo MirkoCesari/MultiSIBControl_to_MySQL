@@ -1,0 +1,14 @@
+{
+    "MultiSIBControl": {
+        "AddressIP": "192.168.1.100",
+        "Port": "8080",
+        "APIKey": "1234"
+    },
+    "DB": {
+        "host": "localhost",
+        "user": "user",
+        "password": "password",
+        "database": "main",
+        "table" : "solar"
+    }
+}
