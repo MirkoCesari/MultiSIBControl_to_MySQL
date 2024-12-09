@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=yes">
+	<meta http-equiv="refresh" content="1">
+    <title>Solar Monitoring Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .data-value {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .section-title {
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-solar-panel"></i> Solar Monitoring System</h1>
+        
+        <!-- Time and Inverter Mode -->
+        <div>
+            <p><i class="far fa-clock"></i> <strong>timestamp:</strong> <span class="data-value">{TIME}</span></p>
+        </div>
+
+        <!-- Data for Px (x = 1, 2, 3) -->
+        <div class="section-title">
+            <h2><i class="fas fa-battery-full"></i> Data for P1, P2, P3</h2>
+            <p><strong>P1_V:</strong> <span class="data-value">{P1_V}</span></p>
+            <p><strong>P1_A:</strong> <span class="data-value">{P1_A}</span></p>
+            <p><strong>P1_SOC:</strong> <span class="data-value">{P1_SOC}</span></p>
+            <p><strong>P1_TEMP:</strong> <span class="data-value">{P1_TEMP}</span></p>
+            <p><strong>P1_REMAIN_AH:</strong> <span class="data-value">{P1_REMAIN_AH}</span></p>
+            <p><strong>P1_IMBALANCE:</strong> <span class="data-value">{P1_IMBALANCE}</span></p>
+
+            <p><strong>P2_V:</strong> <span class="data-value">{P2_V}</span></p>
+            <p><strong>P2_A:</strong> <span class="data-value">{P2_A}</span></p>
+            <p><strong>P2_SOC:</strong> <span class="data-value">{P2_SOC}</span></p>
+            <p><strong>P2_TEMP:</strong> <span class="data-value">{P2_TEMP}</span></p>
+            <p><strong>P2_REMAIN_AH:</strong> <span class="data-value">{P2_REMAIN_AH}</span></p>
+            <p><strong>P2_IMBALANCE:</strong> <span class="data-value">{P2_IMBALANCE}</span></p>
+
+            <p><strong>P3_V:</strong> <span class="data-value">{P3_V}</span></p>
+            <p><strong>P3_A:</strong> <span class="data-value">{P3_A}</span></p>
+            <p><strong>P3_SOC:</strong> <span class="data-value">{P3_SOC}</span></p>
+            <p><strong>P3_TEMP:</strong> <span class="data-value">{P3_TEMP}</span></p>
+            <p><strong>P3_REMAIN_AH:</strong> <span class="data-value">{P3_REMAIN_AH}</span></p>
+            <p><strong>P3_IMBALANCE:</strong> <span class="data-value">{P3_IMBALANCE}</span></p>
+        </div>
+
+        <!-- Pylontech Total -->
+        <div class="section-title">
+            <h2><i class="fas fa-plug"></i> Pylontech Total</h2>
+            <p><strong>Pylon_SOC:</strong> <span class="data-value">{PYLON_SOC}</span></p>
+            <p><strong>Pylon_W:</strong> <span class="data-value">{PYLON_W}</span></p>
+            <p><strong>Pylon_A:</strong> <span class="data-value">{PYLON_A}</span></p>
+            <p><strong>Pylon_V:</strong> <span class="data-value">{PYLON_V}</span></p>
+            <p><strong>Pylon_Temp:</strong> <span class="data-value">{PYLON_TEMP}</span></p>
+            <p><strong>Pylon_Remain_AH:</strong> <span class="data-value">{PYLON_REMAIN_AH}</span></p>
+            <p><strong>Pylon_Remain_kWh:</strong> <span class="data-value">{PYLON_REMAIN_KWH}</span></p>
+        </div>
+
+        <!-- Inverter -->
+        <div class="section-title">
+            <h2><i class="fas fa-bolt"></i> Inverter</h2>
+            <p><strong>Inverter_Load_W:</strong> <span class="data-value">{INV_LOAD_W}</span></p>
+            <p><strong>Inverter_Load_Perc:</strong> <span class="data-value">{INV_LOAD_%}</span></p>
+            <p><strong>Inverter_Grid_W:</strong> <span class="data-value">{INV_GRID_W}</span></p>
+            <p><strong>Inverter_Grid_V:</strong> <span class="data-value">{INV_GRID_V}</span></p>
+            <p><strong>Inverter_PV_W:</strong> <span class="data-value">{INV_PV_W}</span></p>
+        </div>
+    </div>
+</body>
+</html>
