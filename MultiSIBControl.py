@@ -81,7 +81,7 @@ def fetch_and_parse_data(connection, APIKey, AddressIP, Port, table):
         }
 
         # Function to remove units of measurement and convert values to float
-        # for some reason the 
+        # for some reason the MultiSIBControl placeholders used to exclude units are not working in the HTML page 
         def clean_value(value):
             value = value.strip()
             value = re.sub(r'[A-Za-z°%]', '', value)  # Remove char and symbols
